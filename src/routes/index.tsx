@@ -18,7 +18,7 @@ function HomePage() {
         : `${current}'s turn`;
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center gap-6 bg-slate-100 p-4 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <main className="relative flex min-h-screen flex-col items-center justify-center gap-6 bg-red-50 p-4 text-slate-900 dark:bg-red-950 dark:text-slate-100">
       <ThemeToggle />
       <h1 className="text-4xl font-extrabold tracking-tight">Tic Tac Toe</h1>
       <Scoreboard scores={scores} active={result.status === 'playing' ? current : null} />
@@ -32,7 +32,7 @@ function HomePage() {
       <div className="flex gap-3">
         <button
           onClick={newRound}
-          className="rounded-lg bg-amber-300 px-5 py-2 font-semibold text-slate-900 hover:bg-amber-200"
+          className="rounded-lg bg-red-600 px-5 py-2 font-semibold text-white hover:bg-red-500"
         >
           New round
         </button>
