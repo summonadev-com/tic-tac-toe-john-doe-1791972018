@@ -11,12 +11,21 @@ export function ThemeToggle() {
   }
 
   return (
-    <button
-      onClick={toggle}
-      aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
-      className="absolute right-4 top-4 rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-800 shadow ring-1 ring-slate-200 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-700 dark:hover:bg-slate-700"
-    >
-      {dark ? 'Light' : 'Dark'}
-    </button>
+    <div className="absolute right-4 top-4 flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
+      <span>{dark ? 'Dark' : 'Light'}</span>
+      <button
+        role="switch"
+        aria-checked={dark}
+        aria-label="Dark mode"
+        onClick={toggle}
+        className={`relative h-7 w-12 rounded-full transition-colors ${dark ? 'bg-amber-300' : 'bg-slate-300'}`}
+      >
+        <span
+          className={`absolute left-0.5 top-0.5 h-6 w-6 rounded-full bg-white shadow transition-transform ${
+            dark ? 'translate-x-5' : 'translate-x-0'
+          }`}
+        />
+      </button>
+    </div>
   );
 }
