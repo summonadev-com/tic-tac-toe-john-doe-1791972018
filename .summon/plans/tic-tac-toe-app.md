@@ -1,5 +1,5 @@
 ---
-status: pending
+status: implemented
 title: Two-player Tic Tac Toe with scoreboard
 ---
 
