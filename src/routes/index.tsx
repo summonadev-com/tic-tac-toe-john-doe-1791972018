@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Board } from '@/components/Board';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { Scoreboard } from '@/components/Scoreboard';
 import { useTicTacToe } from '@/hooks/useTicTacToe';
 
@@ -17,7 +18,8 @@ function HomePage() {
         : `${current}'s turn`;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-slate-950 p-4 text-slate-100">
+    <main className="relative flex min-h-screen flex-col items-center justify-center gap-6 bg-slate-100 p-4 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+      <ThemeToggle />
       <h1 className="text-4xl font-extrabold tracking-tight">Tic Tac Toe</h1>
       <Scoreboard scores={scores} active={result.status === 'playing' ? current : null} />
       <p className="text-xl font-semibold text-amber-300">{status}</p>
@@ -36,7 +38,7 @@ function HomePage() {
         </button>
         <button
           onClick={resetScores}
-          className="rounded-lg bg-slate-800 px-5 py-2 font-semibold hover:bg-slate-700"
+          className="rounded-lg bg-white px-5 py-2 font-semibold shadow-sm ring-1 ring-slate-200 hover:bg-slate-50 dark:bg-slate-800 dark:ring-0 dark:hover:bg-slate-700"
         >
           Reset scores
         </button>
