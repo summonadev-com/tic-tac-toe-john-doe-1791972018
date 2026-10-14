@@ -18,7 +18,7 @@ export function ThemeToggle() {
         aria-checked={dark}
         aria-label="Dark mode"
         onClick={toggle}
-        className={`relative h-7 w-12 rounded-full transition-colors ${dark ? 'bg-red-500' : 'bg-slate-300'}`}
+        className={`relative h-7 w-12 rounded-full transition-colors ${dark ? 'bg-amber-300' : 'bg-slate-300'}`}
       >
         <span
           className={`absolute left-0.5 top-0.5 h-6 w-6 rounded-full bg-white shadow transition-transform ${
